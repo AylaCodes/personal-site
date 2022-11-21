@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ site_title }} - {{ file_name }}</title>
+        <meta property="og:title" content="{{ tagline }}"/>
+        <meta property="og:description" content="{{ description }}"/>
+        <meta property="og:url" content="{{ base_url}}/{{ file_name }}"/>
+        <meta property="og:image" content="{{ url }}"/>
+        <meta property="og:type" content="article"/>
+        <meta data-react-helmet="true" name="theme-color" content="#A967CE"/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta content="#A967CE" data-react-helmet="true" name="theme-color"/>
+
+        <script type="text/javascript">
+            // Redirect browser to image itself
+            window.location.href = "{{ url }}";
+        </script>
+    </head>
+</html>
