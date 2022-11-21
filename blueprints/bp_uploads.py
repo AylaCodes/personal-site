@@ -1,7 +1,5 @@
 import json
 
-import httpx
-
 from pathlib import Path
 
 from sanic import Blueprint
