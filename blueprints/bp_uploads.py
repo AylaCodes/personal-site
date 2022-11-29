@@ -1,5 +1,7 @@
 import json
 
+import arrow
+
 from pathlib import Path
 
 from sanic import Blueprint
@@ -22,10 +24,21 @@ async def home_uploads(request: Request) -> HTTPResponse:
 
 @uploads.route("/images/<img:str>")
 async def image(request: Request, img: str) -> HTTPResponse:
-    image_url = f"https://{request.host}/images/{img}.png"
+    image_file = Path(f"html/images/{img}.png")
 
-    if not Path(f"html/images/{img}.png").is_file():
+    if not image_file.is_file():
         img = "Image Missing"
         image_url = f"https://{request.host}/images/Image_Missing.png"
+        timestamp = arrow.now.humanize()
+    else:
+        image_url = f"https://{request.host}/images/{img}.png"
+        timestamp = arrow.get(image_file.stat().st_mtime).humanize()
 
-    return html(template_image.render(file_name=img, url=image_url, **config))
+    return html(
+        template_image.render(
+            file_name=img,
+            url=image_url,
+            timestamp=timestamp.capitalize(),
+            **config
+        )
+    )
