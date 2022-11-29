@@ -1,4 +1,10 @@
 .env
 .venv
-*.pyc
+
+node_modules
 html/images
+
+*.pyc
+package-lock.json
+
+TODO.md
