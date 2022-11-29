@@ -1,0 +1,52 @@
+{% macro setup(vue_url, icon, css_url) %}
+<script type="module">
+  import { createApp } from "{{ vue_url }}"
+
+  createApp({
+    delimiters: ["[[", "]]"]
+  }).mount("#vm");
+</script>
+
+<link rel="icon" type="image/x-icon" href="{{ icon }}"/>
+<link rel="stylesheet" type="text/css" href="{{ css_url }}"/>
+{% endmacro %}
+
+{% macro meta(tagline, site_url, site_image, color) %}
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta property="og:title" content="{{ tagline }}"/>
+<meta property="og:url" content="{{ site_url }}"/>
+<meta property="og:image" content="{{ site_image }}"/>
+<meta property="og:type" content="article"/>
+<meta data-react-helmet="true" name="theme-color" content="{{ color }}"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta content="{{ color }}" data-react-helmet="true" name="theme-color"/>
+{% endmacro %}
+
+{% macro navbar() %}
+<aside class="text-center w-32 top-0 sticky">
+  <nav class="bg-slate-900 font-bold flex flex-col h-min -mt-2 p-6 top-0 sticky shadow-lg shadow-gray-900 md:flex-row md:h-16 md:w-screen md:-mt-0">
+    <h1 class="text-purple-500 text-xl mb-6 self-center md:inline-flex md:mb-0 md:mr-6">Wolfie's Space</h1>
+      <a class="self-center" href="#">
+        <div class="bg-slate-700 h-12 w-32 md:h-16">
+          <p class="pt-3 md:pt-5">Home</p>
+        </div>
+      </a>
+      <a class="self-center" href="#">
+        <div class="h-12 w-32 hover:bg-slate-700 hover:duration-[250ms] md:h-16">
+          <p class="pt-3 md:pt-5">About</p>
+        </div>
+      </a>
+      <a class="self-center" href="#">
+        <div class="h-12 w-32 hover:bg-slate-700 hover:duration-[250ms] md:h-16">
+          <p class="pt-3 md:pt-5">Projects</p>
+        </div>
+      </a>
+      <a class="self-center" href="#">
+        <div class="h-12 w-32 hover:bg-slate-700 hover:duration-[250ms] md:h-16">
+          <p class="pt-3 md:pt-5">Contact</p>
+        </div>
+      </a>
+  </nav>
+</aside>
+{% endmacro %}

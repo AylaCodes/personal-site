@@ -6,5 +6,5 @@
     "site_image": "https://wolfie.space/static/images/preview.png",
     "vue_url": "https://wolfie.space/static/scripts/vue.global.js",
     "css_url": "https://wolfie.space/static/css/main.css",
-    "light_purple": "#A967CE"
+    "color": "#A967CE"
 }
