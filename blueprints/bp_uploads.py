@@ -6,7 +6,7 @@ from pathlib import Path
 
 from sanic import Blueprint
 from sanic.request import Request
-from sanic.response import HTTPResponse, text, html
+from sanic.response import HTTPResponse, text, html, redirect
 from jinja2 import Environment, FileSystemLoader
 
 config = json.loads((Path("html/templates/image.json")).read_text())
@@ -20,7 +20,7 @@ uploads = Blueprint("uploads", host="uploads.wolfie.space")
 
 @uploads.route("/")
 async def home_uploads(request: Request) -> HTTPResponse:
-    return text("Hello, upload!")
+    return redirect("/images/Image_Missing")
 
 @uploads.route("/images/<img:str>")
 async def image(request: Request, img: str) -> HTTPResponse:
