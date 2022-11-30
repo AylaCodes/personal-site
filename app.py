@@ -2,9 +2,6 @@ from os import getenv
 
 from dotenv import load_dotenv
 from sanic import Sanic
-from sanic.blueprints import Blueprint
-from sanic.request import Request
-from sanic.response import HTTPResponse, text
 
 from blueprints.bp_main import main
 from blueprints.bp_uploads import uploads
