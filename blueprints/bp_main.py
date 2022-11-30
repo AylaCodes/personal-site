@@ -15,6 +15,7 @@ config = json.loads((Path("html/templates/main.json")).read_text())
 environment = Environment(loader=FileSystemLoader(Path("html/templates")))
 template_main = environment.get_template("main.jinja")
 template_about = environment.get_template("about.jinja")
+template_projects = environment.get_template("projects.jinja")
 
 # Sanic
 main = Blueprint("main", host="wolfie.space")
@@ -26,8 +27,16 @@ async def home_main(request: Request) -> HTTPResponse:
 @main.route("/about")
 async def about_page(request: Request) -> HTTPResponse:
     return html(template_about.render(
-            active="about",
-            birth_date=arrow.get(870262176).humanize(),
-            **config
+        active="about",
+        birth_date=arrow.get(870262176).humanize(),
+        **config
+        )
+    )
+
+@main.route("/projects")
+async def projects_page(request: Request) -> HTTPResponse:
+    return html(template_projects.render(
+        active="projects",
+        **config
         )
     )
