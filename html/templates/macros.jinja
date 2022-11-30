@@ -1,10 +1,11 @@
 {% macro setup(vue_url, icon, css_url) %}
-<script type="module">
-  import { createApp } from "{{ vue_url }}"
+<script type="text/js" src="{{ vue_url }}"></script>
+<script type="text/js" defer>
+  const { createApp } = Vue;
 
   createApp({
     delimiters: ["[[", "]]"]
-  }).mount("#vm");
+  }).mount("#container");
 </script>
 
 <link rel="icon" type="image/x-icon" href="{{ icon }}"/>
