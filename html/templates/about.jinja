@@ -1,0 +1,72 @@
+{% import "macros.jinja" as macros %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ site_title }}</title>
+
+    {{ macros.setup(vue_url, icon, css_url) }}
+
+    {{ macros.meta(tagline, site_url, site_image, color) }}
+  </head>
+
+  <!-- <BG> <TXT> <DISP> <SUBD> <H> <W> <M> <P> <ETC> <MQ:ORD>-->
+
+  <body class="scrollbar-hide">
+    <div id="container" class="bg-slate-800 text-gray-200 flex flex-row min-h-screen w-screen pb-6 md:flex-col">
+      {{ macros.navbar(active, site_url) }}
+
+      <div id="post-container" class="w-2/3 mr-11 ml-11 self-center md:ml-0 md:mr-0">
+        <div class="text-center bg-slate-700 flex-col mt-6 px-6 rounded-lg border-purple-500 border-2 shadow-lg shadow-gray-900">
+          <h1 class="font-bold text-2xl pt-6">About Me</h1>
+          <hr class="bg-slate-800 h-px mt-6 mb-1 border-0"/>
+          <h2 class="-mb-3.5 text-xl">Hi, I'm Ayla!</h2>
+          <hr class="bg-slate-800 h-px mt-6 mb-1 border-0"/>
+          <div class="text-left">
+            <p class="-mb-4 pb-1">I was born around {{ birth_date }} and have been causing <span class="line-through">chaos</span> complete mediocrity every since!</p>
+            <hr class="bg-slate-800 h-px mt-6 mb-1 border-0"/>
+            <p class="pb-1">These days I consider myself a:</p>
+            <ul class="pl-5 list-disc">
+              <li>
+                Hobbyist software developer
+                <ul class="list-disc list-inside">
+                  <li>Python - Intermediate/Advanced</li>
+                  <li>Nim - Beginner</li>
+                  <li>Rust - Beginner</li>
+                </ul>
+              </li>
+              <li>
+                Hobbyist game developer
+                <ul class="list-disc list-inside">
+                  <li>Unreal Engine/3D - Blueprint/C++ - Beginner</li>
+                  <li>Unity/2D - C# - Intermediate</li>
+                </ul>
+              </li>
+              <li>
+                (Un)certified whatever-er
+                <ul class="list-disc list-inside">
+                  <li>Photoshop Graphic design/texture paint - Advanced*</li>
+                  <li>Blender 3D asset creation - Beginner</li>
+                  <li>TailwindCSS frontend - Bumbling idiot</li>
+                </ul>
+              </li>
+            </ul>
+            <p class="text-xs">* I am not an artist by any means</p>
+            <hr class="bg-slate-800 h-px mt-2 mb-1 border-0"/>
+            When I'm not working at my day job or development hobbies, you can find me:
+            <ul class="pl-5 list-disc">
+              <li>Flying Flight Simulators</li>
+              <li>PC Gaming</li>
+              <li>Playing Guitar</li>
+              <li>Learning Piano</li>
+              <li>Avoiding Social Media*</li>
+            </ul>
+            <p class="text-xs">* Mostly, there's some that can't be avoided</p>
+          </div>
+          <hr class="bg-slate-800 h-px mt-2 mb-1 border-0"/>
+          <p class="text-xs pb-2">Post by Ayla - 11/22/2022 - 12:17AM - Thanks for visiting!</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

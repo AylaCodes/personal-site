@@ -6,4 +6,5 @@ as I learn, grow, and try new things. Currently it is - very - unfinished.
 
 What's working/"finished":
 * Home page/blog preparation
+* About page/first draft
 * My discord embed generator for ShareX uploads and an image landing page

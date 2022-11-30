@@ -2,7 +2,7 @@
     "site_title": "Wolfie's Space",
     "icon": "https://wolfie.space/static/images/icon.ico",
     "tagline": "Wolfie's Space - A home for all things Ayla.",
-    "site_url": "https://wolfie.space/",
+    "site_url": "https://wolfie.space",
     "site_image": "https://wolfie.space/static/images/preview.png",
     "vue_url": "https://wolfie.space/static/scripts/vue.global.js",
     "css_url": "https://wolfie.space/static/css/main.css",

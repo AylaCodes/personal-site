@@ -24,16 +24,16 @@
 <meta content="{{ color }}" data-react-helmet="true" name="theme-color"/>
 {% endmacro %}
 
-{% macro navbar(active) %}
+{% macro navbar(active, site_url) %}
 <aside class="text-center w-32 top-0 sticky">
   <nav class="bg-slate-900 font-bold flex flex-col h-min -mt-2 p-6 top-0 sticky shadow-lg shadow-gray-900 md:flex-row md:h-16 md:w-screen md:-mt-0">
     <h1 class="text-purple-500 text-xl mb-6 self-center md:inline-flex md:mb-0 md:mr-6">Wolfie's Space</h1>
-      <a class="self-center" href="#">
+      <a class="self-center" href="{{ site_url }}">
         <div id="homeButton" class="h-12 w-32 hover:bg-slate-700 hover:duration-[250ms] [&.active]:bg-slate-700 md:h-16">
           <p class="pt-3 md:pt-5">Home</p>
         </div>
       </a>
-      <a class="self-center" href="#">
+      <a class="self-center" href="{{ site_url }}/about">
         <div id="aboutButton" class="h-12 w-32 hover:bg-slate-700 hover:duration-[250ms] [&.active]:bg-slate-700 md:h-16">
           <p class="pt-3 md:pt-5">About</p>
         </div>

@@ -8,13 +8,14 @@ from sanic.response import HTTPResponse, text
 
 from blueprints.bp_main import main
 from blueprints.bp_uploads import uploads
+from blueprints.bp_about import about
 
 load_dotenv()
 
 app = Sanic("main-site")
 app.config.FORWARDED_SECRET = getenv("SANIC_ID")
 
-blueprints = [main, uploads]
+blueprints = [main, uploads, about]
 
 for bp in blueprints:
     app.blueprint(bp)
