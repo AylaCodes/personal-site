@@ -4,6 +4,7 @@
     "icon": "https://wolfie.space/static/images/icon.ico",
     "tagline": "Wolfie shared an image with you!",
     "description": "Take a look:",
+    "site_url": "https://wolfie.space",
     "base_url": "https://uploads.wolfie.space/images",
     "vue_url": "https://wolfie.space/static/scripts/vue.global.js",
     "css_url": "https://wolfie.space/static/css/main.css",
