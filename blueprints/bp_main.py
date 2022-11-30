@@ -18,4 +18,4 @@ main = Blueprint("main", host="wolfie.space")
 
 @main.route("/")
 async def home_main(request: Request) -> HTTPResponse:
-    return html(template_main.render(**config))
+    return html(template_main.render(active="home", **config))
