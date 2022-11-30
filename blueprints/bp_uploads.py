@@ -29,7 +29,7 @@ async def image(request: Request, img: str) -> HTTPResponse:
     if not image_file.is_file():
         img = "Image Missing"
         image_url = f"https://{request.host}/images/Image_Missing.png"
-        timestamp = arrow.now.humanize()
+        timestamp = arrow.now().humanize()
     else:
         image_url = f"https://{request.host}/images/{img}.png"
         timestamp = arrow.get(image_file.stat().st_mtime).humanize()
