@@ -17,4 +17,4 @@ for bp in blueprints:
     app.blueprint(bp)
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=8000, workers=8, access_log=False)
+    app.run(host="127.0.0.1", port=8000, fast=True, access_log=False)
