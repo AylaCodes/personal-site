@@ -7,3 +7,5 @@ html/images
 package-lock.json
 
 TODO.md
+.pdm.toml
+pdm.lock
