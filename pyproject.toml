@@ -1,0 +1,18 @@
+[tool.pdm]
+
+[project]
+name = "personal-site"
+version = "0.2.0"
+description = "My personal website"
+authors = [
+    {name = "AylaCodes", email = "not@provided.com"},
+]
+dependencies = [
+    "python-dotenv>=0.21.0",
+    "sanic>=22.9.1",
+    "jinja2>=3.1.2",
+    "arrow>=1.2.3",
+    "bunnycdnpython>=0.0.8",
+]
+requires-python = ">=3.9"
+license = {text = "MIT"}
