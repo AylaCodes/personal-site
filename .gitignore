@@ -4,6 +4,8 @@ node_modules
 html/images
 
 *.pyc
+*.egg-info
+*.egg-info/*
 package-lock.json
 
 TODO.md
