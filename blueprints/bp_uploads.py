@@ -23,6 +23,10 @@ uploads = Blueprint("uploads", host="uploads.wolfie.space")
 async def home_uploads(request: Request) -> HTTPResponse:
     return redirect("/images/Image_Missing")
 
+@uploads.route("/images/<file:ext>")
+async def image_file(request: Request, file: str, ext: str) -> HTTPResponse:
+    return redirect(f"{config['cdn_url']}/images/{file}.{ext}")
+
 @uploads.route("/images/<img:str>")
 async def image(request: Request, img: str) -> HTTPResponse:
     image_url = f"{config['cdn_url']}/images/{img}.png"
