@@ -1,5 +1,8 @@
 [tool.pdm]
 
+[tool.setuptools]
+py-modules = ["blueprints"]
+
 [project]
 name = "personal-site"
 version = "0.2.0"
@@ -13,6 +16,7 @@ dependencies = [
     "jinja2>=3.1.2",
     "arrow>=1.2.3",
     "bunnycdnpython>=0.0.8",
+    "httpx>=0.23.1",
 ]
 requires-python = ">=3.9"
 license = {text = "MIT"}
