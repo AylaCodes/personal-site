@@ -1,3 +1,4 @@
+import re
 import json
 
 import arrow
@@ -24,15 +25,14 @@ async def home_uploads(request: Request) -> HTTPResponse:
 
 @uploads.route("/images/<img:str>")
 async def image(request: Request, img: str) -> HTTPResponse:
-    image_file = Path(f"html/images/{img}.png")
+    image_url = f"{config['cdn_url']}/images/{img}.png"
 
-    if not image_file.is_file():
-        img = "Image Missing"
-        image_url = f"https://{request.host}/images/Image_Missing.png"
-        timestamp = arrow.now().humanize()
+    # Vast majority of images I upload have unix timestamps simply in the filename
+    timestamp = re.search("[0-9]+", img)
+    if not timestamp:
+        timestamp = "at an unknown time"
     else:
-        image_url = f"https://{request.host}/images/{img}.png"
-        timestamp = arrow.get(image_file.stat().st_mtime).humanize()
+        timestamp = arrow.get(int(timestamp.group())).humanize()
 
     return html(
         template_image.render(
